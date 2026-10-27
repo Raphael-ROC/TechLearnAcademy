@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Recuperar senha | TechLearn Academy</title>
+        <link rel="stylesheet" href="css/estilo.css">
+        <script src="js/config.js" defer>
+        </script>
+        <script src="js/api.js" defer>
+        </script>
+        <script src="js/publico.js" defer>
+        </script>
+    </head>
+    <body data-pagina="recuperar">
+        <a class="pular" href="#conteudo">Ir para o formulário</a>
+        <main class="publico">
+            <section class="apresentacao" aria-label="Sobre a plataforma">
+                <a class="marca" href="index.html">
+                    <span class="simbolo" aria-hidden="true">TL</span>
+                    <span>TechLearn Academy</span>
+                </a>
+                <div>
+                    <p class="rotulo">Aprenda no seu ritmo</p>
+                    <h1>Um novo começo, com segurança.</h1>
+                    <p>Uma plataforma de cursos de programação para aprender, praticar e crescer.</p>
+                </div>
+                
+            </section>
+            <section id="conteudo" class="form-publico">
+                <p class="rotulo">Acesso à plataforma</p>
+                <h2>Recuperar senha</h2>
+                <p class="subtitulo">Informe o e-mail de acesso ou o e-mail pessoal cadastrado. As instruções serão enviadas ao e-mail pessoal. Disponível para aluno, mentor e gestor.</p>
+                <form id="form-recuperar">
+                    <div class="campo">
+                        <label for="email">E-mail</label>
+                        <input id="email" name="email" type="email" autocomplete="email" required maxlength="254">
+                    </div>
+                    <button type="submit">Enviar instruções</button>
+                </form>
+                <div class="links-publicos">
+                    <a href="index.html">Voltar ao login</a>
+                    <a href="redefinir-senha.html">Já tenho o código</a>
+                </div>
+                <p id="mensagem" class="mensagem" role="status" aria-live="polite" aria-atomic="true">
+                </p>
+            </section>
+        </main>
+    </body>
+</html>
