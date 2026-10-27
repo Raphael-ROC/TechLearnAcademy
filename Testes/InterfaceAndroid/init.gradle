@@ -1,0 +1,13 @@
+allprojects {
+    plugins.withId('com.android.application') {
+        android.testOptions.unitTests.includeAndroidResources = true
+        android.testOptions.unitTests.all {
+            systemProperty 'robolectric.dependency.repo.url', 'https://repo.maven.apache.org/maven2'
+            systemProperty 'maven.repo.local', new File(rootProject.projectDir.parentFile, '.local/maven').absolutePath
+            systemProperty 'user.home', new File(rootProject.projectDir.parentFile, '.local/java-user').absolutePath
+        }
+        android.sourceSets.test.java.srcDirs += [new File(rootProject.projectDir.parentFile, 'Testes/InterfaceAndroid')]
+        dependencies.add('testImplementation', 'junit:junit:4.13.2')
+        dependencies.add('testImplementation', 'org.robolectric:robolectric:4.15.1')
+    }
+}
