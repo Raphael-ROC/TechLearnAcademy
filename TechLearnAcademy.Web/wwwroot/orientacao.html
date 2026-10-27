@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Registrar orientação | TechLearn Academy</title>
+        <link rel="stylesheet" href="css/estilo.css">
+        <script src="js/config.js" defer>
+        </script>
+        <script src="js/api.js" defer>
+        </script>
+        <script src="js/mentor.js" defer>
+        </script>
+    </head>
+    <body data-pagina="orientacao">
+        <a class="pular" href="#conteudo">Ir para o conteúdo</a>
+        <header class="cabecalho">
+            <a class="marca" href="perfil.html">
+                <span class="simbolo" aria-hidden="true">TL</span>
+                <span>TechLearn Academy</span>
+            </a>
+            <div class="usuario">
+                <span id="nome-usuario">
+                </span>
+                <button id="sair" type="button">Sair</button>
+            </div>
+        </header>
+        <nav id="menu" class="menu" aria-label="Menu principal">
+        </nav>
+        <main class="conteudo">
+            <div class="introducao">
+                <p class="rotulo">Seu espaço de aprendizagem</p>
+                <h1>Registrar orientação</h1>
+                <p class="subtitulo">Escreva um feedback claro e respeitoso para o aluno.</p>
+            </div>
+            <p id="mensagem" class="mensagem" role="status" aria-live="polite" aria-atomic="true">
+            </p>
+            <div id="conteudo">
+                <section class="cartao bloco">
+                    <h2 id="nome-aluno">
+                    </h2>
+                    <form id="form-orientacao">
+                        <div class="campo">
+                            <label for="texto">Orientação para o aluno</label>
+                            <textarea id="texto" name="texto" required maxlength="4000">
+                            </textarea>
+                        </div>
+                        <button type="submit">Registrar orientação</button>
+                    </form>
+                </section>
+                <h2>Orientações anteriores</h2>
+                <div id="orientacoes" class="grade">
+                </div>
+            </div>
+        </main>
+        <footer class="rodape">TechLearn Academy · Conhecimento para abrir novos caminhos.</footer>
+    </body>
+</html>

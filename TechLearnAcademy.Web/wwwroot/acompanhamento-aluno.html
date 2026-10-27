@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Acompanhamento do aluno | TechLearn Academy</title>
+        <link rel="stylesheet" href="css/estilo.css">
+        <script src="js/config.js" defer>
+        </script>
+        <script src="js/api.js" defer>
+        </script>
+        <script src="js/mentor.js" defer>
+        </script>
+    </head>
+    <body data-pagina="acompanhamento">
+        <a class="pular" href="#conteudo">Ir para o conteúdo</a>
+        <header class="cabecalho">
+            <a class="marca" href="perfil.html">
+                <span class="simbolo" aria-hidden="true">TL</span>
+                <span>TechLearn Academy</span>
+            </a>
+            <div class="usuario">
+                <span id="nome-usuario">
+                </span>
+                <button id="sair" type="button">Sair</button>
+            </div>
+        </header>
+        <nav id="menu" class="menu" aria-label="Menu principal">
+        </nav>
+        <main class="conteudo">
+            <div class="introducao">
+                <p class="rotulo">Seu espaço de aprendizagem</p>
+                <h1>Acompanhamento do aluno</h1>
+                <p class="subtitulo">Cursos, notas e histórico para orientar o próximo passo.</p>
+            </div>
+            <p id="mensagem" class="mensagem" role="status" aria-live="polite" aria-atomic="true">
+            </p>
+            <div id="conteudo">
+                <section id="detalhes" class="cartao bloco">
+                </section>
+                <div id="acoes" class="acoes bloco">
+                </div>
+                <h2>Cursos e matrículas</h2>
+                <div id="cursos" class="grade bloco">
+                </div>
+                <h2>Histórico de avaliações</h2>
+                <div id="lista" class="grade bloco">
+                </div>
+                <h2>Orientações anteriores</h2>
+                <div id="orientacoes" class="grade">
+                </div>
+            </div>
+        </main>
+        <footer class="rodape">TechLearn Academy · Conhecimento para abrir novos caminhos.</footer>
+    </body>
+</html>

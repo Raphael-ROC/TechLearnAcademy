@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chamados, ajuda e ouvidoria | TechLearn Academy</title>
+<link rel="stylesheet" href="css/estilo.css">
+<script src="js/config.js" defer></script><script src="js/api.js" defer></script><script src="js/atendimento.js" defer></script>
+</head>
+<body data-pagina="chamados">
+<a class="pular" href="#conteudo">Ir para o conteúdo</a>
+<header class="cabecalho"><a class="marca" href="perfil.html"><span class="simbolo" aria-hidden="true">TL</span>TechLearn Academy</a>
+<div class="usuario"><span id="nome-usuario"></span><button id="sair" type="button">Sair</button></div></header>
+<nav id="menu" class="menu" aria-label="Menu principal"></nav>
+<main class="conteudo"><div class="introducao"><h1>Chamados, ajuda e ouvidoria</h1><p class="subtitulo">Dúvidas do curso vão para um mentor. A ouvidoria é atendida pela gestão.</p></div>
+<p id="mensagem" class="mensagem" role="status" aria-live="polite" aria-atomic="true"></p>
+<div id="conteudo">
+<section id="novo-chamado" class="cartao bloco"><h2 id="titulo-novo">Novo chamado</h2>
+<p id="destino-chamado"></p>
+<form id="form-chamado">
+<div id="campo-curso" class="campo" hidden><label for="curso-chamado">Tipo de ajuda</label>
+<select id="curso-chamado"><option value="0">Ouvidoria / ajuda com o gestor</option></select></div>
+<div class="campo"><label for="assunto">Assunto</label><input id="assunto" required minlength="3" maxlength="150"></div>
+<div class="campo"><label for="texto-chamado">Descreva sua dúvida ou solicitação</label><textarea id="texto-chamado" required minlength="3" maxlength="4000"></textarea></div>
+<button type="submit">Enviar chamado</button>
+</form></section>
+<div class="busca"><div class="campo"><label for="filtro-chamados">Mostrar</label><select id="filtro-chamados">
+<option value="abertos">Chamados abertos e em atendimento</option><option value="meus">Meus chamados e atendimentos</option>
+<option value="disponiveis">Disponíveis para atender</option><option value="todos">Todos, incluindo encerrados</option></select></div>
+<button id="atualizar-lista" type="button" class="secundario">Atualizar lista</button></div>
+<div id="lista" class="grade bloco"></div>
+<section id="detalhe-chamado" class="cartao" hidden aria-labelledby="titulo-chamado">
+<h2 id="titulo-chamado"></h2><p id="dados-chamado"></p><p id="descricao-chamado" class="texto-mensagem"></p>
+<div id="acoes-chamado" class="acoes"></div><h3>Conversa</h3><p id="situacao-conversa" class="ajuda" role="status"></p><div id="conversa" class="conversa"></div>
+<form id="form-mensagem" hidden><div class="campo"><label for="texto-mensagem">Sua mensagem</label>
+<textarea id="texto-mensagem" required maxlength="4000"></textarea></div><button type="submit">Enviar mensagem</button></form>
+</section></div></main>
+<footer class="rodape">TechLearn Academy · Conhecimento para abrir novos caminhos.</footer>
+</body></html>
