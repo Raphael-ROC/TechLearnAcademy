@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TechLearnAcademy.Mobile.MainPage" BackgroundColor="#11243A">
+    <Grid RowDefinitions="Auto,Auto,*" Padding="12" RowSpacing="8">
+        <VerticalStackLayout Spacing="6">
+            <Label Text="TechLearn Academy" TextColor="White" FontSize="22"
+                   SemanticProperties.HeadingLevel="Level1" />
+            <Label Text="Endereço HTTPS da plataforma" TextColor="White" />
+            <Entry x:Name="Endereco" Placeholder="https://seu-servidor/"
+                   Keyboard="Url" TextColor="Black" BackgroundColor="White"
+                   SemanticProperties.Description="Endereço do servidor da plataforma" />
+            <Button Text="Abrir plataforma" Clicked="AbrirPlataforma"
+                    BackgroundColor="#5AE0C5" TextColor="#11243A" />
+        </VerticalStackLayout>
+        <Label x:Name="Mensagem" Grid.Row="1" TextColor="White"
+               Text="No celular, informe o endereço do servidor. localhost é o próprio celular." />
+        <WebView x:Name="Navegador" Grid.Row="2" Navigated="PaginaCarregada"
+                 Navigating="PaginaAbrindo" />
+    </Grid>
+</ContentPage>
+
