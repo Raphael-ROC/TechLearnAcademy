@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cadastrar usuário | TechLearn Academy</title>
+<link rel="stylesheet" href="css/estilo.css">
+<script src="js/config.js" defer></script><script src="js/api.js" defer></script><script src="js/administrador.js" defer></script>
+</head>
+<body data-pagina="cadastrar">
+<a class="pular" href="#conteudo">Ir para o conteúdo</a>
+<header class="cabecalho"><a class="marca" href="perfil.html"><span class="simbolo" aria-hidden="true">TL</span>TechLearn Academy</a>
+<div class="usuario"><span id="nome-usuario"></span><button id="sair" type="button">Sair</button></div></header>
+<nav id="menu" class="menu" aria-label="Menu principal"></nav>
+<main class="conteudo"><div class="introducao"><h1>Cadastrar usuário</h1><p class="subtitulo">Cadastre uma nova conta de trabalho. Alunos se cadastram pela página inicial.</p></div>
+<p id="mensagem" class="mensagem" role="status" aria-live="polite" aria-atomic="true"></p>
+<div id="conteudo">
+<section class="cartao bloco"><h2 id="titulo-cadastro">Cadastrar mentor ou gestor</h2><p>O e-mail institucional será gerado com os dois primeiros nomes e o ID do cadastro. A senha inicial deve ser informada ao usuário.</p>
+<form id="form-conta"><div class="campo"><label for="conta-nome">Nome completo</label><input id="conta-nome" required minlength="2" maxlength="100" autocomplete="name"></div>
+<div class="campo"><label for="conta-contato">E-mail pessoal para recuperação de senha</label><input id="conta-contato" type="email" required maxlength="254" autocomplete="email"></div>
+<div class="campo"><label for="conta-perfil">Perfil da nova conta</label><select id="conta-perfil"><option value="Mentor">Mentor</option><option value="Gestor">Gestor</option></select></div>
+<div class="campo"><label for="conta-senha">Senha inicial</label><input id="conta-senha" type="password" required autocomplete="new-password" aria-describedby="regra-senha"></div>
+<p id="regra-senha" class="ajuda">Mínimo 8 caracteres, uma letra maiúscula, um número e um caractere especial. Sem espaços.</p>
+<div class="campo"><label for="conta-confirmacao">Confirmar senha</label><input id="conta-confirmacao" type="password" required autocomplete="new-password"></div>
+<button type="submit">Cadastrar conta</button></form></section>
+<p><a href="usuarios.html">Voltar à lista de usuários</a></p>
+</div></main><footer class="rodape">TechLearn Academy · Conhecimento para abrir novos caminhos.</footer></body></html>

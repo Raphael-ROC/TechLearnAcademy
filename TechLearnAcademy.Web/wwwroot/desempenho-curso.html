@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Desempenho dos alunos | TechLearn Academy</title>
+<link rel="stylesheet" href="css/estilo.css">
+<script src="js/config.js" defer></script><script src="js/api.js" defer></script><script src="js/atendimento.js" defer></script>
+</head>
+<body data-pagina="desempenho">
+<a class="pular" href="#conteudo">Ir para o conteúdo</a>
+<header class="cabecalho"><a class="marca" href="perfil.html"><span class="simbolo" aria-hidden="true">TL</span>TechLearn Academy</a>
+<div class="usuario"><span id="nome-usuario"></span><button id="sair" type="button">Sair</button></div></header>
+<nav id="menu" class="menu" aria-label="Menu principal"></nav>
+<main class="conteudo"><div class="introducao"><h1>Desempenho dos alunos</h1><p class="subtitulo">Selecione um aluno do curso para consultar suas notas, aprovação e tentativas.</p></div>
+<p id="mensagem" class="mensagem" role="status" aria-live="polite" aria-atomic="true"></p>
+<div id="conteudo">
+<a href="relatorios.html">Voltar aos relatórios</a><h2 id="nome-curso"></h2>
+<div id="lista" class="grade bloco"></div>
+<section id="relatorio-aluno" class="cartao" hidden><h2 id="nome-aluno"></h2><p id="situacao-aluno"></p>
+<h3>Módulos</h3><div id="modulos-relatorio" class="grade bloco"></div>
+<h3>Última tentativa em cada avaliação</h3><div id="avaliacoes-relatorio" class="grade bloco"></div>
+<h3>Histórico de todas as tentativas</h3><div id="historico-relatorio" class="tabela-area"></div>
+</section></div></main>
+<footer class="rodape">TechLearn Academy · Conhecimento para abrir novos caminhos.</footer>
+</body></html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Editar usuário | TechLearn Academy</title>
+<link rel="stylesheet" href="css/estilo.css">
+<script src="js/config.js" defer></script><script src="js/api.js" defer></script><script src="js/administrador.js" defer></script>
+</head>
+<body data-pagina="editar">
+<a class="pular" href="#conteudo">Ir para o conteúdo</a>
+<header class="cabecalho"><a class="marca" href="perfil.html"><span class="simbolo" aria-hidden="true">TL</span>TechLearn Academy</a>
+<div class="usuario"><span id="nome-usuario"></span><button id="sair" type="button">Sair</button></div></header>
+<nav id="menu" class="menu" aria-label="Menu principal"></nav>
+<main class="conteudo"><div class="introducao"><h1>Editar usuário</h1><p class="subtitulo">Atualize os dados. O perfil e o e-mail institucional permanecem fixos.</p></div>
+<p id="mensagem" class="mensagem" role="status" aria-live="polite" aria-atomic="true"></p>
+<div id="conteudo">
+<section class="cartao"><h2 id="nome-editado"></h2><p>Perfil: <strong id="perfil-editado"></strong></p>
+<form id="form-usuario">
+<div class="campo"><label for="nome-editado-input">Nome</label><input id="nome-editado-input" required minlength="2" maxlength="100"></div>
+<div class="campo"><label for="email-editado-input">E-mail de acesso</label><input id="email-editado-input" type="email" required maxlength="254"></div>
+<div class="campo"><label for="contato-editado">E-mail pessoal para recuperação</label><input id="contato-editado" type="email" required maxlength="254"></div>
+<div id="situacao-conta" class="campo"><label for="ativo">Situação da conta</label><select id="ativo"><option value="true">Ativo</option><option value="false">Inativo</option></select></div>
+<button type="submit">Salvar alterações</button></form><p class="linha"><a href="usuarios.html">Voltar aos usuários</a></p></section></div></main>
+<footer class="rodape">TechLearn Academy · Conhecimento para abrir novos caminhos.</footer>
+</body></html>

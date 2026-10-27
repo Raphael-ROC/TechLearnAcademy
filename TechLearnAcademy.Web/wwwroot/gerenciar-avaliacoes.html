@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Gerenciar avaliações | TechLearn Academy</title>
+        <link rel="stylesheet" href="css/estilo.css">
+        <script src="js/config.js" defer>
+        </script>
+        <script src="js/api.js" defer>
+        </script>
+        <script src="js/gestor.js" defer>
+        </script>
+    </head>
+    <body data-pagina="avaliacoes">
+        <a class="pular" href="#conteudo">Ir para o conteúdo</a>
+        <header class="cabecalho">
+            <a class="marca" href="perfil.html">
+                <span class="simbolo" aria-hidden="true">TL</span>
+                <span>TechLearn Academy</span>
+            </a>
+            <div class="usuario">
+                <span id="nome-usuario">
+                </span>
+                <button id="sair" type="button">Sair</button>
+            </div>
+        </header>
+        <nav id="menu" class="menu" aria-label="Menu principal">
+        </nav>
+        <main class="conteudo">
+            <div class="introducao">
+                <p class="rotulo">Seu espaço de aprendizagem</p>
+                <h1>Gerenciar avaliações</h1>
+                <p class="subtitulo">Crie questões objetivas com um único gabarito correto.</p>
+            </div>
+            <p id="mensagem" class="mensagem" role="status" aria-live="polite" aria-atomic="true">
+            </p>
+            <div id="conteudo">
+                <div class="blocos">
+                    <section class="cartao">
+                        <div class="campo">
+                            <label for="curso-selecionado">Curso</label>
+                            <select id="curso-selecionado" name="curso-selecionado" required>
+                                <option value="">Selecione um curso</option>
+                            </select>
+                        </div>
+                        <div class="campo">
+                            <label for="modulo-selecionado">Módulo</label>
+                            <select id="modulo-selecionado" name="modulo-selecionado" required>
+                                <option value="">Selecione um módulo</option>
+                            </select>
+                        </div>
+                        <h2 id="titulo-form-avaliacao">Nova avaliação</h2>
+                        <form id="form-avaliacao">
+                            <input id="avaliacao-id" type="hidden" value="0">
+                            <div class="campo">
+                                <label for="titulo">Título da avaliação</label>
+                                <input id="titulo" name="titulo" type="text" required maxlength="150">
+                            </div>
+                            <div class="campo">
+                                <label for="avaliacao-ativo">Situação</label>
+                                <select id="avaliacao-ativo" name="avaliacao-ativo" required>
+                                    <option value="true">Ativo</option>
+                                    <option value="false">Inativo</option>
+                                </select>
+                            </div>
+                            <div class="acoes">
+                                <button type="submit">Salvar avaliação</button>
+                                <button id="nova-avaliacao" type="button" class="secundario">Nova avaliação</button>
+                            </div>
+                        </form>
+                        <div id="avaliacoes" class="bloco">
+                        </div>
+                    </section>
+                    <section class="cartao">
+                        <h2 id="titulo-form-questao">Nova questão</h2>
+                        <p id="avaliacao-atual">Selecione uma avaliação.</p>
+                        <form id="form-questao">
+                            <input id="questao-id" type="hidden" value="0">
+                            <div class="campo">
+                                <label for="enunciado">Enunciado</label>
+                            <textarea id="enunciado" name="enunciado" required maxlength="2000">
+                                </textarea>
+                            </div>
+                            <div class="campo">
+                                <label for="questao-ativo">Situação</label>
+                                <select id="questao-ativo" name="questao-ativo" required>
+                                    <option value="true">Ativo</option>
+                                    <option value="false">Inativo</option>
+                                </select>
+                            </div>
+                            <p class="ajuda">Preencha pelo menos duas alternativas e marque apenas uma correta.</p>
+                            <div id="alternativas">
+                            </div>
+                            <button id="adicionar-alternativa" type="button" class="secundario">Adicionar alternativa</button>
+                            <div class="acoes linha">
+                                <button type="submit">Salvar questão</button>
+                                <button id="nova-questao" type="button" class="secundario">Nova questão</button>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+                <h2>Questões da avaliação</h2>
+                <div id="questoes" class="grade">
+                </div>
+            </div>
+        </main>
+        <footer class="rodape">TechLearn Academy · Conhecimento para abrir novos caminhos.</footer>
+    </body>
+</html>

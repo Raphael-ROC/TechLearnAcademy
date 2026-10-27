@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Gerenciar conteúdo | TechLearn Academy</title>
+        <link rel="stylesheet" href="css/estilo.css">
+        <script src="js/config.js" defer>
+        </script>
+        <script src="js/api.js" defer>
+        </script>
+        <script src="js/gestor.js" defer>
+        </script>
+    </head>
+    <body data-pagina="conteudo">
+        <a class="pular" href="#conteudo">Ir para o conteúdo</a>
+        <header class="cabecalho">
+            <a class="marca" href="perfil.html">
+                <span class="simbolo" aria-hidden="true">TL</span>
+                <span>TechLearn Academy</span>
+            </a>
+            <div class="usuario">
+                <span id="nome-usuario">
+                </span>
+                <button id="sair" type="button">Sair</button>
+            </div>
+        </header>
+        <nav id="menu" class="menu" aria-label="Menu principal">
+        </nav>
+        <main class="conteudo">
+            <div class="introducao">
+                <p class="rotulo">Seu espaço de aprendizagem</p>
+                <h1>Gerenciar conteúdo</h1>
+                <p class="subtitulo">Organize os módulos, PDFs e links externos.</p>
+            </div>
+            <p id="mensagem" class="mensagem" role="status" aria-live="polite" aria-atomic="true">
+            </p>
+            <div id="conteudo">
+                <section class="cartao bloco">
+                    <div class="campo">
+                        <label for="curso-selecionado">Curso</label>
+                        <select id="curso-selecionado" name="curso-selecionado" required>
+                            <option value="">Selecione um curso</option>
+                        </select>
+                    </div>
+                    <p id="limite-modulos" class="ajuda">Máximo de quatro módulos por curso. Adicione quantos materiais precisar.</p>
+                    <div id="modulos" class="grade">
+                    </div>
+                </section>
+                <div class="blocos">
+                    <section class="cartao">
+                        <h2 id="titulo-modulo">Novo módulo</h2>
+                        <form id="form-modulo">
+                            <input id="modulo-id" type="hidden" value="0">
+                            <div class="campo">
+                                <label for="titulo">Título do módulo</label>
+                                <input id="titulo" name="titulo" type="text" required maxlength="150">
+                            </div>
+                            <div class="campo">
+                                <label for="ordem">Ordem</label>
+                                <input id="ordem" name="ordem" type="number" required min="1" max="4">
+                            </div>
+                            <div class="campo">
+                                <label for="modulo-ativo">Situação</label>
+                                <select id="modulo-ativo" name="modulo-ativo" required>
+                                    <option value="true">Ativo</option>
+                                    <option value="false">Inativo</option>
+                                </select>
+                            </div>
+                            <div class="acoes">
+                                <button type="submit">Salvar módulo</button>
+                                <button id="novo-modulo" type="button" class="secundario">Novo módulo</button>
+                            </div>
+                        </form>
+                    </section>
+                    <section class="cartao">
+                        <h2 id="titulo-material">Novo material</h2>
+                        <form id="form-material">
+                            <input id="material-id" type="hidden" value="0">
+                            <div class="campo">
+                                <label for="modulo-selecionado">Módulo</label>
+                                <select id="modulo-selecionado" name="modulo-selecionado" required>
+                                    <option value="">Selecione um módulo</option>
+                                </select>
+                            </div>
+                            <div class="campo">
+                                <label for="material-titulo">Título do material</label>
+                                <input id="material-titulo" name="material-titulo" type="text" required maxlength="150">
+                            </div>
+                            <div class="campo">
+                                <label for="tipo">Tipo</label>
+                                <select id="tipo" name="tipo" required>
+                                    <option value="PDF">PDF</option>
+                                    <option value="Link">Link externo ou videoaula</option>
+                                </select>
+                            </div>
+                            <div class="campo"><label for="origem-material">Adicionar material por</label>
+                                <select id="origem-material"><option value="arquivo">Enviar documento PDF</option><option value="link">Adicionar link</option></select></div>
+                            <div id="campo-arquivo" class="campo" hidden><label for="arquivo-pdf">Documento PDF (até 10 MB)</label>
+                                <input id="arquivo-pdf" type="file" accept=".pdf,application/pdf">
+                                <p class="ajuda">Na edição, deixe vazio para manter o PDF atual.</p></div>
+                            <div id="campo-link" class="campo">
+                                <label for="url">Link</label>
+                                <input id="url" name="url" type="url" required maxlength="2000">
+                            </div>
+                            <div class="campo">
+                                <label for="material-ativo">Situação</label>
+                                <select id="material-ativo" name="material-ativo" required>
+                                    <option value="true">Ativo</option>
+                                    <option value="false">Inativo</option>
+                                </select>
+                            </div>
+                            <div class="acoes">
+                                <button type="submit">Salvar material</button>
+                                <button id="novo-material" type="button" class="secundario">Adicionar outro material</button>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+                <h2>Materiais cadastrados</h2>
+                <div id="materiais" class="grade">
+                </div>
+            </div>
+        </main>
+        <footer class="rodape">TechLearn Academy · Conhecimento para abrir novos caminhos.</footer>
+    </body>
+</html>
