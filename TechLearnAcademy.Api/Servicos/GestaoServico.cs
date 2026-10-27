@@ -84,7 +84,7 @@ public class GestaoServico(ConexaoBanco conexao, CursosServico cursos)
     public async Task<object> Chamados(Usuario usuario)
     {
         using var banco = await conexao.Abrir();
-        string filtro = " WHERE c.SolicitanteId=@id OR (c.DestinatarioPerfil=@perfil AND (c.ResponsavelId IS NULL OR c.ResponsavelId=@id)) OR (@perfil='Gestor' AND c.DestinatarioPerfil IN('Mentor','Gestor'))";
+        string filtro = " WHERE c.SolicitanteId=@id OR (c.SolicitanteId<>@id AND c.DestinatarioPerfil=@perfil AND (c.ResponsavelId IS NULL OR c.ResponsavelId=@id)) OR (@perfil='Gestor' AND c.SolicitanteId<>@id AND c.DestinatarioPerfil IN('Mentor','Gestor'))";
         var lista = await ConexaoBanco.Consultar(banco, ChamadoSql + filtro + " ORDER BY CASE WHEN c.Status='Encerrado' THEN 1 ELSE 0 END,c.DataAbertura DESC,c.Id DESC", new { id = usuario.Id, perfil = usuario.Perfil });
         foreach (var chamado in lista) PermissoesChamado(chamado, usuario);
         return lista;
@@ -96,7 +96,7 @@ public class GestaoServico(ConexaoBanco conexao, CursosServico cursos)
         bool responsavel = !proprio && chamado["responsavelId"] != null && (int)chamado["responsavelId"]! == usuario.Id;
         bool aberto = (string)chamado["status"]! != "Encerrado";
         chamado["podeAtender"] = !proprio && (string)chamado["status"]! == "Aberto" && chamado["responsavelId"] == null && (string)chamado["destinatarioPerfil"]! == usuario.Perfil;
-        chamado["podeResponder"] = aberto && (responsavel || (proprio && chamado["responsavelId"] != null));
+        chamado["podeResponder"] = aberto && (responsavel || (proprio && usuario.Perfil == "Aluno" && chamado["responsavelId"] != null));
         chamado["podeEncerrar"] = aberto && responsavel;
     }
 
@@ -138,7 +138,8 @@ public class GestaoServico(ConexaoBanco conexao, CursosServico cursos)
         Regras.Exigir((string)chamado["status"]! != "Encerrado", "Este chamado já foi encerrado.", 409);
         PermissoesChamado(chamado, usuario);
         bool autor = (int)chamado["solicitanteId"]! == usuario.Id;
-        bool responsavel = chamado["responsavelId"] != null && (int)chamado["responsavelId"]! == usuario.Id;
+        bool responsavel = !autor && chamado["responsavelId"] != null && (int)chamado["responsavelId"]! == usuario.Id;
+        Regras.Exigir(!autor || usuario.Perfil == "Aluno", "Você pode acompanhar o status do seu chamado, mas não responder a ele.", 403);
         Regras.Exigir((bool)chamado["podeResponder"]!, autor ? "Aguarde um responsável assumir seu chamado para continuar a conversa." : "Assuma o chamado antes de responder.", 403);
         await ConexaoBanco.Gravar(banco, "INSERT INTO MensagensChamado(ChamadoId,UsuarioId,Texto) VALUES(@id,@usuarioId,@texto)", new { id, usuarioId = usuario.Id, texto }, transacao);
         if (responsavel && usuario.Perfil == "Mentor" && (string)chamado["tipo"]! == "AjudaCurso")

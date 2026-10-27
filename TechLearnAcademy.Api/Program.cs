@@ -50,6 +50,27 @@ if (args.Contains("--criar-admin"))
     return;
 }
 
+// Recuperação administrativa pelo terminal, conforme a versão publicada.
+if (args.Contains("--redefinir-admin"))
+{
+    using var escopo = app.Services.CreateScope();
+    var usuarios = escopo.ServiceProvider.GetRequiredService<UsuariosServico>();
+    Console.Write("E-mail de acesso do Administrador: ");
+    string email = Console.ReadLine() ?? "";
+    Console.Write("Nova senha (não será exibida): ");
+    string senha = LerSenha();
+    Console.Write("Confirmar nova senha: ");
+    string confirmacao = LerSenha();
+    try
+    {
+        await usuarios.RedefinirSenhaAdministrador(email, senha, confirmacao);
+        Console.WriteLine("Senha administrativa redefinida. As sessões anteriores foram encerradas.");
+    }
+    catch (ErroAplicacao erro) { Console.Error.WriteLine(erro.Message); Environment.ExitCode = 1; }
+    catch (SqlException) { Console.Error.WriteLine("Não foi possível acessar o banco configurado."); Environment.ExitCode = 1; }
+    return;
+}
+
 app.Use(async (contexto, proximo) =>
 {
     try
@@ -116,7 +137,28 @@ if (Directory.Exists(pastaWeb))
     string VersaoSite() => Math.Max(File.GetLastWriteTimeUtc(typeof(Usuario).Assembly.Location).Ticks,
         Directory.EnumerateFiles(pastaWeb, "*", SearchOption.AllDirectories).Select(f => File.GetLastWriteTimeUtc(f).Ticks).DefaultIfEmpty(0).Max()).ToString();
     app.MapGet("/versao-site", () => new { versao = VersaoSite() });
-    app.Use(async (contexto, proximo) =>
+    // Recuperação administrativa pelo terminal, conforme a versão publicada.
+if (args.Contains("--redefinir-admin"))
+{
+    using var escopo = app.Services.CreateScope();
+    var usuarios = escopo.ServiceProvider.GetRequiredService<UsuariosServico>();
+    Console.Write("E-mail de acesso do Administrador: ");
+    string email = Console.ReadLine() ?? "";
+    Console.Write("Nova senha (não será exibida): ");
+    string senha = LerSenha();
+    Console.Write("Confirmar nova senha: ");
+    string confirmacao = LerSenha();
+    try
+    {
+        await usuarios.RedefinirSenhaAdministrador(email, senha, confirmacao);
+        Console.WriteLine("Senha administrativa redefinida. As sessões anteriores foram encerradas.");
+    }
+    catch (ErroAplicacao erro) { Console.Error.WriteLine(erro.Message); Environment.ExitCode = 1; }
+    catch (SqlException) { Console.Error.WriteLine("Não foi possível acessar o banco configurado."); Environment.ExitCode = 1; }
+    return;
+}
+
+app.Use(async (contexto, proximo) =>
     {
         string caminho = contexto.Request.Path.Value ?? "";
         if ((contexto.Request.Method == "GET" || contexto.Request.Method == "HEAD") && caminho.EndsWith(".html", StringComparison.OrdinalIgnoreCase))

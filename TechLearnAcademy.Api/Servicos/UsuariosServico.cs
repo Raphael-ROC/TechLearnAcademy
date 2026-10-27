@@ -1,3 +1,5 @@
+using Azure;
+using Azure.Communication.Email;
 using System.Net;
 using System.Net.Mail;
 using Microsoft.Data.SqlClient;
@@ -10,6 +12,20 @@ public class UsuariosServico(ConexaoBanco conexao, IConfiguration configuracao)
 {
     public Task Cadastro(DadosCadastro dados) => Cadastrar(dados, "Aluno", false);
     public Task PrimeiroAdministrador(DadosCadastro dados) => Cadastrar(dados, "Administrador", true);
+
+    // Comando de manutenção do servidor; não possui rota HTTP.
+    public async Task RedefinirSenhaAdministrador(string emailInformado, string senha, string confirmacao)
+    {
+        string email = Regras.Email(emailInformado);
+        Regras.Senha(senha, confirmacao);
+        using var banco = await conexao.Abrir();
+        using var transacao = banco.BeginTransaction();
+        var usuarios = await ConexaoBanco.Consultar(banco, "SELECT Id AS id FROM Usuarios WITH(UPDLOCK,HOLDLOCK) WHERE Email=@email AND Perfil='Administrador' AND Ativo=1", new { email }, transacao);
+        Regras.Exigir(usuarios.Count == 1, "Administrador ativo não encontrado.", 404);
+        int id = (int)usuarios[0]["id"]!;
+        await ConexaoBanco.Gravar(banco, "UPDATE Usuarios SET SenhaHash=@hash WHERE Id=@id; UPDATE Sessoes SET Revogada=1 WHERE UsuarioId=@id; UPDATE RecuperacoesSenha SET Utilizado=1 WHERE UsuarioId=@id", new { id, hash = Regras.HashSenha(senha) }, transacao);
+        await transacao.CommitAsync();
+    }
 
     private async Task Cadastrar(DadosCadastro dados, string perfil, bool primeiroAdministrador)
     {
@@ -127,8 +143,9 @@ public class UsuariosServico(ConexaoBanco conexao, IConfiguration configuracao)
     {
         string email = Regras.Email(dados.Email);
         string servidor = configuracao["Email:Servidor"] ?? "";
+        string conexaoAzure = configuracao["Email:ConexaoAzure"] ?? "";
         string remetente = configuracao["Email:Remetente"] ?? "";
-        Regras.Exigir(servidor != "" && remetente != "", "Configure o serviço de e-mail para recuperar a senha.", 503);
+        Regras.Exigir((conexaoAzure != "" || servidor != "") && remetente != "", "Configure o serviço de e-mail para recuperar a senha.", 503);
         string url = Regras.Url(configuracao["Email:UrlRedefinicao"]);
         using var banco = await conexao.Abrir();
         var usuarios = await ConexaoBanco.Consultar(banco, "SELECT Id AS id,COALESCE(EmailContato,Email) AS destino FROM Usuarios WHERE (Email=@email OR EmailContato=@email) AND Ativo=1 AND Perfil<>'Administrador'", new { email });
@@ -138,13 +155,28 @@ public class UsuariosServico(ConexaoBanco conexao, IConfiguration configuracao)
         string token = Regras.NovoToken();
         string hash = Regras.HashToken(token);
         await ConexaoBanco.Gravar(banco, "UPDATE RecuperacoesSenha SET Utilizado=1 WHERE UsuarioId=@id AND Utilizado=0; INSERT INTO RecuperacoesSenha(UsuarioId,TokenHash,Validade) VALUES(@id,@hash,@validade)", new { id, hash, validade = DateTime.UtcNow.AddMinutes(30) });
-        using var mensagem = new MailMessage(remetente, (string)usuarios[0]["destino"]!, "TechLearn Academy — recuperação de senha", "Para criar sua nova senha, abra este link: " + url + "?token=" + Uri.EscapeDataString(token) + "\nO link vence em 30 minutos e funciona uma única vez. Se você não solicitou, ignore este e-mail.");
-        using var smtp = new SmtpClient(servidor, configuracao.GetValue("Email:Porta", 587));
-        smtp.EnableSsl = configuracao.GetValue("Email:UsarTls", true);
-        string usuarioSmtp = configuracao["Email:Usuario"] ?? "";
-        if (usuarioSmtp != "") smtp.Credentials = new NetworkCredential(usuarioSmtp, configuracao["Email:Senha"]);
-        try { await smtp.SendMailAsync(mensagem); }
-        catch (SmtpException)
+        string assunto = "TechLearn Academy — recuperação de senha";
+        string texto = "Para criar sua nova senha, abra este link: " + url + "?token=" + Uri.EscapeDataString(token) + "\nO link vence em 30 minutos e funciona uma única vez. Se você não solicitou, ignore este e-mail.";
+        string destino = (string)usuarios[0]["destino"]!;
+        try
+        {
+            if (conexaoAzure != "")
+            {
+                var cliente = new EmailClient(conexaoAzure);
+                var mensagem = new EmailMessage(remetente, destino, new EmailContent(assunto) { PlainText = texto });
+                await cliente.SendAsync(WaitUntil.Completed, mensagem);
+            }
+            else
+            {
+                using var mensagem = new MailMessage(remetente, destino, assunto, texto);
+                using var smtp = new SmtpClient(servidor, configuracao.GetValue("Email:Porta", 587));
+                smtp.EnableSsl = configuracao.GetValue("Email:UsarTls", true);
+                string usuarioSmtp = configuracao["Email:Usuario"] ?? "";
+                if (usuarioSmtp != "") smtp.Credentials = new NetworkCredential(usuarioSmtp, configuracao["Email:Senha"]);
+                await smtp.SendMailAsync(mensagem);
+            }
+        }
+        catch (Exception)
         {
             await ConexaoBanco.Gravar(banco, "UPDATE RecuperacoesSenha SET Utilizado=1 WHERE TokenHash=@hash", new { hash });
             throw new ErroAplicacao(503, "Não foi possível enviar o e-mail de recuperação. Verifique o serviço de e-mail.");
