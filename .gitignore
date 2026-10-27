@@ -1,0 +1,43 @@
+# Saídas de compilação e arquivos do computador
+**/bin/
+**/obj/
+**/build/
+**/.gradle/
+**/.local/
+.vs/
+.vscode/
+.idea/
+output/
+entregas/
+publicacao/
+artifacts/
+.local/
+*.user
+*.suo
+*.log
+*.pid
+*.tmp
+Thumbs.db
+.DS_Store
+# Banco, certificados e chaves privadas
+*.bak
+*.mdf
+*.ldf
+*.pfx
+*.p12
+*.jks
+*.keystore
+*.idsig
+.env
+.env.*
+!.env.example
+**/appsettings.Local.json
+**/appsettings.*.local.json
+**/local.properties
+**/*.pubxml.user
+Testes/**/evidencias/
+Testes/**/resultado.txt
+# Pacotes gerados ficam fora do histórico de fontes
+*.apk
+*.exe
+*.zip
