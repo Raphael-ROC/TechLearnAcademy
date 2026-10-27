@@ -1,0 +1,137 @@
+/* As cores e os espaços são compartilhados por todas as telas. */
+:root { font-family: Arial, Helvetica, sans-serif; color: #182c43; background: #f3f6fa; line-height: 1.6; font-size: 16px; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; }
+a { color: #076a73; text-underline-offset: 4px; }
+button, input, textarea, select { font: inherit; }
+button, .botao { background: #087f83; color: white; padding: 11px 20px; border: 1px solid #087f83; border-radius: 9px; cursor: pointer; font-weight: 700; text-decoration: none; display: inline-block; text-align: center; }
+button:hover, .botao:hover { background: #05666a; }
+button:disabled { cursor: wait; opacity: .65; }
+.secundario { color: #16374e; background: #f1f6f9; border-color: #cddde5; }
+.secundario:hover { background: #e4eef3; }
+:focus-visible { outline: 3px solid #d78b00; outline-offset: 4px; }
+h1, h2, h3, p { margin-top: 0; }
+h1 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); line-height: 1.2; letter-spacing: -.035em; }
+h2 { font-size: 1.3rem; line-height: 1.35; }
+h3 { font-size: 1.1rem; }
+label { font-weight: 700; display: block; margin-bottom: 7px; }
+input:not([type="radio"]):not([type="checkbox"]), select, textarea { width: 100%; border: 1px solid #bacad6; border-radius: 8px; background: white; color: #182c43; padding: 11px 12px; }
+textarea { min-height: 115px; resize: vertical; }
+input[type="radio"], input[type="checkbox"] { accent-color: #087f83; width: 19px; height: 19px; flex-shrink: 0; }
+.campo { margin-bottom: 20px; }
+.ajuda { color: #4b6475; font-size: .9rem; margin: 7px 0 0; }
+.mensagem { border-radius: 8px; min-height: 24px; padding: 0; margin: 18px 0; overflow-wrap: anywhere; }
+.mensagem:not(:empty) { padding: 12px 15px; }
+.informacao { background: #e9f1f7; color: #244761; }
+.erro { background: #fff0ef; color: #9e2525; }
+.sucesso { background: #e8f5ef; color: #17613e; }
+.rotulo { color: #087f83; text-transform: uppercase; font-size: .76rem; letter-spacing: .13em; font-weight: 700; margin-bottom: 10px; }
+.subtitulo { color: #53687d; max-width: 650px; }
+.marca { display: flex; align-items: center; gap: 12px; font-size: 1.1rem; font-weight: 700; text-decoration: none; color: inherit; }
+.simbolo { display: grid; place-items: center; width: 44px; height: 44px; background: #baf1e7; border-radius: 12px; color: #08364b; font-size: 1rem; }
+.pular { position: absolute; top: -70px; left: 12px; z-index: 9; padding: 10px; background: white; }
+.pular:focus { top: 10px; }
+/* O login usa dois blocos; no celular eles ficam um abaixo do outro. */
+.publico { display: grid; grid-template-columns: 1fr 1fr; min-height: 100vh; }
+.apresentacao { background: linear-gradient(145deg, #112e48, #164d65); color: white; padding: clamp(28px, 6vw, 78px); display: flex; flex-direction: column; justify-content: space-between; min-height: 100vh; position: relative; overflow: hidden; }
+.apresentacao h1 { max-width: 510px; font-size: clamp(2.3rem, 4.2vw, 3.7rem); }
+.apresentacao .rotulo { color: #aee7dd; }
+.apresentacao p { max-width: 400px; color: #d9e8ef; }
+.apresentacao::after { content: ""; width: 330px; height: 330px; border: 1px solid #ffffff20; border-radius: 50%; position: absolute; right: -110px; bottom: -90px; pointer-events: none; }
+.form-publico { display: grid; align-content: center; padding: 45px clamp(25px, 6vw, 90px); }
+.form-publico form { max-width: 440px; }
+.form-publico button { width: 100%; }
+.links-publicos { margin-top: 25px; display: flex; flex-wrap: wrap; gap: 18px; }
+.cabecalho { background: #112e48; color: white; padding: 20px max(24px, calc((100vw - 1200px) / 2)); display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.cabecalho .usuario { display: flex; align-items: center; gap: 20px; font-size: .9rem; }
+.cabecalho button { padding: 7px 16px; background: #ffffff12; border-color: #ffffff50; }
+.menu { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; background: white; border-bottom: 1px solid #dce5eb; padding: 9px max(20px, calc((100vw - 1200px) / 2)); }
+.menu a { text-decoration: none; color: #375063; padding: 9px 14px; border-radius: 7px; font-weight: 700; font-size: .93rem; }
+.menu a:hover, .menu a[aria-current="page"] { color: #086b70; background: #e7f4f2; }
+.conteudo { max-width: 1248px; padding: 42px 24px 60px; margin: auto; }
+.introducao { margin-bottom: 27px; }
+.grade { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 285px), 1fr)); gap: 20px; }
+.cartao { background: white; border: 1px solid #dce6ec; padding: 25px; border-radius: 14px; box-shadow: 0 5px 18px #13304705; overflow-wrap: anywhere; }
+.cartao p { color: #53687d; }
+.cartao .botao { margin-top: 8px; }
+.numero { color: #104158; font-size: 2rem; line-height: 1.2; font-weight: 700; display: block; }
+.metricas { margin-bottom: 25px; }
+.blocos { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+.bloco { margin-bottom: 26px; }
+.acoes { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.busca { display: flex; gap: 12px; align-items: end; margin-bottom: 25px; }
+.busca .campo { flex: 1; margin: 0; }
+.vazio { padding: 20px; background: #eaf0f5; color: #4b6173; border-radius: 9px; border: 1px dashed #c5d4df; }
+.progresso { display: grid; gap: 5px; margin: 16px 0; color: #4b6173; font-size: .9rem; }
+progress { width: 100%; height: 10px; accent-color: #087f83; }
+.material { display: block; margin: 10px 0; border: 1px solid #dbe6ec; border-radius: 8px; padding: 11px; background: #f4f8fa; text-decoration: none; }
+.paginacao { display: flex; gap: 18px; align-items: center; justify-content: center; margin-top: 25px; }
+fieldset { border: 1px solid #dce6ec; border-radius: 11px; padding: 22px; margin: 0 0 20px; background: white; }
+legend { font-weight: 700; padding: 0 8px; }
+.alternativa { display: flex; align-items: center; gap: 10px; padding: 12px; font-weight: 400; border: 1px solid #dce6ec; border-radius: 8px; margin: 10px 0; cursor: pointer; }
+.linha { border-top: 1px solid #e1e9ee; padding-top: 18px; margin-top: 18px; }
+.tabela-area { overflow-x: auto; background: white; border: 1px solid #dce6ec; border-radius: 12px; }
+table { width: 100%; border-collapse: collapse; min-width: 620px; }
+caption { padding: 14px; font-weight: 700; text-align: left; }
+th, td { text-align: left; padding: 14px 17px; border-bottom: 1px solid #e1e9ee; }
+th { background: #edf3f7; font-size: .9rem; }
+tr:last-child td { border-bottom: 0; }
+.selo { display: inline-block; padding: 4px 10px; border-radius: 20px; background: #e7f4f2; color: #07686d; font-size: .8rem; font-weight: 700; }
+.rodape { padding: 20px; text-align: center; color: #577087; font-size: .85rem; border-top: 1px solid #dce6ec; }
+[hidden] { display: none !important; }
+/* Unidades relativas permitem aumentar o texto pelo navegador. */
+@media (max-width: 760px) {
+    .publico { grid-template-columns: 1fr; }
+    .apresentacao { min-height: 280px; padding: 27px; gap: 32px; }
+    .apresentacao h1 { font-size: 2rem; margin-bottom: 10px; }
+    .apresentacao > p { display: none; }
+    .form-publico { padding: 35px 25px; }
+    .cabecalho { align-items: start; flex-direction: column; padding: 20px; }
+    .cabecalho .usuario { width: 100%; justify-content: space-between; }
+    .menu { padding: 8px 12px; }
+    .menu a { padding: 9px; font-size: .85rem; }
+    .conteudo { padding: 28px 18px 45px; }
+    .blocos { grid-template-columns: 1fr; }
+    .busca { flex-wrap: wrap; }
+    .busca .campo { flex-basis: 100%; }
+    .cartao { padding: 22px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Diálogos e conversas usam as mesmas cores do restante do site. */
+.dialogo { color: #182c43; background: #fff; border: 1px solid #bacad6; border-radius: 14px; padding: 28px; width: min(560px, calc(100vw - 32px)); max-height: 85vh; overflow: auto; box-shadow: 0 12px 50px #0004; }
+.dialogo::backdrop { background: #102b46aa; }
+.dialogo p { line-height: 1.65; white-space: pre-wrap; }
+.dialogo .acoes { margin-top: 22px; position: sticky; bottom: -28px; padding: 12px 0; background: #fff; }
+.cartao button { margin: 8px 8px 0 0; }
+.conversa { display: grid; gap: 14px; margin: 20px 0; max-height: 480px; overflow: auto; padding: 8px; }
+.conversa article { background: #f1f6fa; border-left: 4px solid #087f83; padding: 16px; border-radius: 8px; }
+.conversa p, .texto-mensagem { white-space: pre-wrap; overflow-wrap: anywhere; }
+.conversa small { color: #53687d; }
+.perigo { color: #962a2a; background: #fff0ef; border-color: #efb4b0; }
+.perigo:hover { background: #ffe0dd; }
+input[readonly] { background: #edf3f7 !important; }
+.tabela-area a { white-space: nowrap; }
+#aviso-atualizacao { position: sticky; top: 0; z-index: 1000; padding: 16px; margin: 0; border-radius: 0; background: #e7f7f8; color: #16374e; }
+#aviso-atualizacao button { margin-left: 12px; }
+#aviso-atualizacao button:focus-visible { outline: 3px solid #087e89; outline-offset: 3px; }
+
+.certificado { background: #fff; border: 5px double #16374e; padding: 40px; text-align: center; color: #16374e; }
+.certificado h2 { font-size: clamp(1.4rem, 4vw, 2rem); }
+.certificado h3 { font-size: 1.5rem; overflow-wrap: anywhere; }
+.codigo-certificado { font-size: .85rem; }
+@media print {
+    @page { size: A4 landscape; margin: 12mm; }
+    body[data-pagina="certificado"] { background: #fff; min-width: 0; }
+    body[data-pagina="certificado"] .cabecalho, body[data-pagina="certificado"] .menu,
+    body[data-pagina="certificado"] .introducao, body[data-pagina="certificado"] .acoes,
+    body[data-pagina="certificado"] .mensagem, body[data-pagina="certificado"] .rodape,
+    body[data-pagina="certificado"] .pular { display: none !important; }
+    body[data-pagina="certificado"] main { margin: 0; padding: 0; max-width: none; }
+    .certificado { padding: 15mm; break-inside: avoid; }
+    .certificado p { font-size: 12pt; line-height: 1.35; margin-bottom: 3mm; }
+    .certificado h2 { font-size: 24pt; line-height: 1.2; margin-bottom: 4mm; }
+    .certificado h3 { font-size: 18pt; line-height: 1.3; margin-bottom: 3mm; }
+    .certificado .rotulo, .certificado .codigo-certificado { font-size: 10pt; }
+}
+
