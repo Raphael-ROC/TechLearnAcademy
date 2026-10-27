@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "TechLearnAcademy.Api": {
+      "commandName": "Project", "launchBrowser": true,
+      "applicationUrl": "https://localhost:7291;http://localhost:5291",
+      "environmentVariables": { "ASPNETCORE_ENVIRONMENT": "Development" }
+    }
+  }
+}
