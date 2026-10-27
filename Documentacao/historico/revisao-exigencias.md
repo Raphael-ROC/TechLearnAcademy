@@ -81,12 +81,12 @@ Arquivos de apoio:
 - `Testes/revisao_funcional.py` e `tmp/revisao/resultado-http.json`.
 - `Testes/revisao_complementar.py` e `tmp/revisao/resultado-complementar.json`.
 - `TechLearnAcademy.Tests/Program.cs`, com os 50 testes de regras.
-- [Relatório detalhado](Evidencias/relatorio-aluno.png).
-- [Lista de usuários do administrador](Evidencias/admin-usuarios.png).
-- [Envio de PDF](Evidencias/material-pdf.png).
-- [Conversa do mentor](Evidencias/chat-mentor.png).
-- [Confirmação de exclusão](Evidencias/excluir-curso.png).
-- [Certificado aprovado](Evidencias/certificado.png).
+- Relatório detalhado (evidência local não incluída no repositório).
+- Lista de usuários do administrador (evidência local não incluída no repositório).
+- Envio de PDF (evidência local não incluída no repositório).
+- Conversa do mentor (evidência local não incluída no repositório).
+- Confirmação de exclusão (evidência local não incluída no repositório).
+- Certificado aprovado (evidência local não incluída no repositório).
 
 A única dependência externa pendente é o serviço real de envio de e-mail. O teste usou SMTP fictício no próprio computador, sem enviar mensagens externas.
 A criação de um e-mail institucional gera o identificador de login; uma caixa postal depende de um serviço de e-mail.

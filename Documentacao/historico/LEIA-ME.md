@@ -1,6 +1,6 @@
 # Instalação neste computador
 
-Consulte [LEIA-ME-LOCAL.md](LEIA-ME-LOCAL.md) para os caminhos e a configuração instalados neste computador.
+Consulte [LEIA-ME-LOCAL.md](../executar-localmente.md) para os caminhos e a configuração instalados neste computador.
 
 # TechLearn Academy — PIM IV
 
@@ -10,19 +10,19 @@ Chamados enviados ficam para acompanhamento até alguém assumir. Somente o resp
 
 Cada avaliação pode ser respondida uma vez por tentativa do curso. Se reprovar, o aluno precisa usar **Reiniciar curso**, que zera o progresso de todos os módulos e mantém as notas antigas no histórico. O banco atual já recebeu a atualização `07-corrigir-recuperacao-e-avaliacoes.sql`.
 
-Para carregar as alterações em C#, pare a execução no Visual Studio (**Shift+F5**) e inicie novamente (**F5**). Veja [o guia simples](Documentacao/novas-funcoes.md).
+Para carregar as alterações em C#, pare a execução no Visual Studio (**Shift+F5**) e inicie novamente (**F5**). Veja [o guia simples](novas-funcoes.md).
 
 ## Cursos cadastrados em 11/10/2026
 
 Os seis PDFs enviados foram organizados em **7 cursos, 25 módulos e 50 matérias em PDF**, com **25 avaliações de revisão**. Todos foram cadastrados no banco SQL utilizado pelo projeto, mantendo os dados anteriores.
 
-Entre como **Aluno → Catálogo** para escolher um curso. Como **Gestor**, use **Cursos**, **Conteúdo** e **Avaliações** para consultar ou editar o cadastro. Consulte [a organização completa dos conteúdos](Documentacao/cursos-conteudos.md).
+Entre como **Aluno → Catálogo** para escolher um curso. Como **Gestor**, use **Cursos**, **Conteúdo** e **Avaliações** para consultar ou editar o cadastro. Consulte [a organização completa dos conteúdos](cursos-conteudos.md).
 
 ## Revisão de 07/10/2026
 
 Lista de usuários e cadastro agora têm páginas separadas. Chat, PDF, relatórios por aluno, certificados e exclusões foram conferidos. Páginas abertas e conversas recebem atualizações automaticamente.
 
-Confira [a revisão completa dos pedidos](Documentacao/revisao-exigencias.md) e [o guia simples](Documentacao/novas-funcoes.md). Inicie **TechLearnAcademy.Api** pelo Visual Studio (**F5**) para abrir o site em https://localhost:7291. Execute apenas uma instância da API. O envio real de recuperação depende de configurar o serviço de e-mail.
+Confira [a revisão completa dos pedidos](revisao-exigencias.md) e [o guia simples](novas-funcoes.md). Inicie **TechLearnAcademy.Api** pelo Visual Studio (**F5**) para abrir o site em https://localhost:7291. Execute apenas uma instância da API. O envio real de recuperação depende de configurar o serviço de e-mail.
 
 Os procedimentos abaixo incluem a versão anterior.
 
@@ -161,5 +161,5 @@ As poucas técnicas necessárias além de condições simples são explicadas: a
 # Revisão de 07/10/2026
 
 Lista de usuários e cadastro separados, chat automático, PDF visível, relatórios por aluno e atualização automática das páginas.
-Confira [a revisão completa dos pedidos](Documentacao/revisao-exigencias.md) e [o guia simples](Documentacao/novas-funcoes.md).
+Confira [a revisão completa dos pedidos](revisao-exigencias.md) e [o guia simples](novas-funcoes.md).
 

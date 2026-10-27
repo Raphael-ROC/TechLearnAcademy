@@ -12,6 +12,7 @@ Conferência realizada em **27/10/2026**. Esta página separa o que foi verifica
 | Comparação com o site público | 42 arquivos HTTP 200; três JavaScripts diferentes foram incorporados. |
 | GitHub Actions em cópia limpa | API e site, Desktop Windows e Android Java aprovados na [execução inicial](https://github.com/Raphael-ROC/TechLearnAcademy/actions/runs/40539451010). |
 | Android no CI | APK de desenvolvimento compilado e Android Lint executado. |
+| Pacote do clone do GitHub | Publicação compilada; status e páginas públicas HTTP 200; rota de banco sem sessão HTTP 401. |
 | Separação de arquivos privados | Backups, registros do banco, configuração privada e chaves de assinatura fora do histórico. |
 
 Os três links de instaladores dependem dos pacotes distribuídos no site. Esses binários não integram os fontes; a limitação é explícita no verificador e no guia de publicação.

@@ -33,7 +33,7 @@ O público inclui estudantes, iniciantes, autodidatas e pessoas em transição d
 
 **Captura a produzir:** 01-login.png, com os campos vazios. Não mostrar senha ou token.
 
-**Código para apontar:** [index.html: apresentação e marca](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Web/wwwroot/index.html:18).
+**Código para apontar:** [index.html: apresentação e marca](../../TechLearnAcademy.Web/wwwroot/index.html).
 
 ## 2. Organização da solução — 00:50 a 01:40
 
@@ -49,7 +49,7 @@ No backend, o Controller recebe a solicitação. O Serviço verifica as regras. 
 
 **Captura a produzir:** 02-solucao.png, mostrando os projetos e as pastas, sem configurações secretas.
 
-**Código para apontar:** [UsuariosController: rota de login](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Api/Controllers/UsuariosController.cs:19); [ConexaoBanco: comandos com parâmetros](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Api/Banco/ConexaoBanco.cs:20); [Program.cs da API: entrega do site](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Api/Program.cs:103).
+**Código para apontar:** [UsuariosController: rota de login](../../TechLearnAcademy.Api/Controllers/UsuariosController.cs); [ConexaoBanco: comandos com parâmetros](../../TechLearnAcademy.Api/Banco/ConexaoBanco.cs); [Program.cs da API: entrega do site](../../TechLearnAcademy.Api/Program.cs).
 
 ## 3. HTML e acessibilidade — 01:40 a 02:30
 
@@ -67,7 +67,7 @@ As outras páginas mantêm essa organização: título, campos identificados, a�
 
 **Captura a produzir:** 03-html-formulario.png, mostrando o formulário e a área de mensagem no editor.
 
-**Código para apontar:** [index.html: formulário](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Web/wwwroot/index.html:34); [index.html: mensagem acessível](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Web/wwwroot/index.html:49).
+**Código para apontar:** [index.html: formulário](../../TechLearnAcademy.Web/wwwroot/index.html); [index.html: mensagem acessível](../../TechLearnAcademy.Web/wwwroot/index.html).
 
 ## 4. CSS e adaptação às telas — 02:30 a 03:20
 
@@ -83,7 +83,7 @@ O focus-visible destaca o elemento que está recebendo o foco do teclado. O text
 
 **Capturas a produzir:** 04-login-computador.png e 05-login-celular.png, com o mesmo conteúdo.
 
-**Código para apontar:** [estilo.css: foco do teclado](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Web/wwwroot/css/estilo.css:12); [estilo.css: colunas](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Web/wwwroot/css/estilo.css:35); [estilo.css: tela menor](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Web/wwwroot/css/estilo.css:83).
+**Código para apontar:** [estilo.css: foco do teclado](../../TechLearnAcademy.Web/wwwroot/css/estilo.css); [estilo.css: colunas](../../TechLearnAcademy.Web/wwwroot/css/estilo.css); [estilo.css: tela menor](../../TechLearnAcademy.Web/wwwroot/css/estilo.css).
 
 ## 5. JavaScript e comunicação — 03:20 a 04:30
 
@@ -103,7 +103,7 @@ A resposta é lida como JSON. Se houver erro HTTP, a mensagem da API aparece na 
 
 **Captura a produzir:** 06-js-comunicacao.png, mostrando somente o código, sem valores reais de credenciais.
 
-**Código para apontar:** [api.js: fetch e JSON](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Web/wwwroot/js/api.js:17); [api.js: envio do formulário](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Web/wwwroot/js/api.js:142); [config.js: mesma origem](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Web/wwwroot/js/config.js:1).
+**Código para apontar:** [api.js: fetch e JSON](../../TechLearnAcademy.Web/wwwroot/js/api.js); [api.js: envio do formulário](../../TechLearnAcademy.Web/wwwroot/js/api.js); [config.js: mesma origem](../../TechLearnAcademy.Web/wwwroot/js/config.js).
 
 ## 6. Login, perfil e sessão real — 04:30 a 05:40
 
@@ -123,7 +123,7 @@ Sair revoga a sessão na API. Não é apenas voltar para a tela inicial.”
 
 **Captura a produzir:** 07-sessao-codigo.png, mostrando o código que cria o cookie, sem capturar o valor de uma sessão.
 
-**Código para apontar:** [publico.js: login e direcionamento](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Web/wwwroot/js/publico.js:3); [api.js: quatro destinos](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Web/wwwroot/js/api.js:90); [UsuariosServico: cookie HttpOnly](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Api/Servicos/UsuariosServico.cs:50); [SessaoHandler: sessão real](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Api/Servicos/SessaoHandler.cs:20).
+**Código para apontar:** [publico.js: login e direcionamento](../../TechLearnAcademy.Web/wwwroot/js/publico.js); [api.js: quatro destinos](../../TechLearnAcademy.Web/wwwroot/js/api.js); [UsuariosServico: cookie HttpOnly](../../TechLearnAcademy.Api/Servicos/UsuariosServico.cs); [SessaoHandler: sessão real](../../TechLearnAcademy.Api/Servicos/SessaoHandler.cs).
 
 ## 7. Jornada do aluno — 05:40 a 06:50
 
@@ -143,7 +143,7 @@ Se ainda não houver registros, a página informa que a lista está vazia. Não 
 
 **Capturas a produzir:** 08-aluno.png e 09-modulo-materiais.png, usando registros reais do ambiente de demonstração.
 
-**Código para apontar:** [aluno.js: matrícula](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Web/wwwroot/js/aluno.js:32); [aluno.js: conclusão](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Web/wwwroot/js/aluno.js:69); [CursosServico: progresso](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Api/Servicos/CursosServico.cs:8); [Cadastro público como Aluno](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Api/Servicos/UsuariosServico.cs:11).
+**Código para apontar:** [aluno.js: matrícula](../../TechLearnAcademy.Web/wwwroot/js/aluno.js); [aluno.js: conclusão](../../TechLearnAcademy.Web/wwwroot/js/aluno.js); [CursosServico: progresso](../../TechLearnAcademy.Api/Servicos/CursosServico.cs); [Cadastro público como Aluno](../../TechLearnAcademy.Api/Servicos/UsuariosServico.cs).
 
 ## 8. Avaliações e correção — 06:50 a 07:40
 
@@ -161,7 +161,7 @@ O resultado mostra acertos, erros e progresso atualizado. A gravação usa uma t
 
 **Capturas a produzir:** 10-avaliacao.png e 11-resultado.png, após uma tentativa real no ambiente separado.
 
-**Código para apontar:** [aluno.js: alternativas e progresso da prova](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Web/wwwroot/js/aluno.js:84); [aluno.js: respostas](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Web/wwwroot/js/aluno.js:118); [AvaliacoesServico: correção](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Api/Servicos/AvaliacoesServico.cs:111); [Cálculo da nota e aprovação](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Api/Servicos/AvaliacoesServico.cs:138).
+**Código para apontar:** [aluno.js: alternativas e progresso da prova](../../TechLearnAcademy.Web/wwwroot/js/aluno.js); [aluno.js: respostas](../../TechLearnAcademy.Web/wwwroot/js/aluno.js); [AvaliacoesServico: correção](../../TechLearnAcademy.Api/Servicos/AvaliacoesServico.cs); [Cálculo da nota e aprovação](../../TechLearnAcademy.Api/Servicos/AvaliacoesServico.cs).
 
 ## 9. Acompanhamento do mentor — 07:40 a 08:20
 
@@ -177,7 +177,7 @@ O aluno consulta as orientações no próprio painel. Os dados de outro aluno n�
 
 **Captura a produzir:** 12-mentor.png, evitando expor dados pessoais de outras pessoas.
 
-**Código para apontar:** [mentor.js: acompanhamento](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Web/wwwroot/js/mentor.js:21); [mentor.js: orientação](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Web/wwwroot/js/mentor.js:73); [Regras: vínculo obrigatório](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Api/Servicos/Regras.cs:95).
+**Código para apontar:** [mentor.js: acompanhamento](../../TechLearnAcademy.Web/wwwroot/js/mentor.js); [mentor.js: orientação](../../TechLearnAcademy.Web/wwwroot/js/mentor.js); [Regras: vínculo obrigatório](../../TechLearnAcademy.Api/Servicos/Regras.cs).
 
 ## 10. Gestão acadêmica — 08:20 a 09:20
 
@@ -195,7 +195,7 @@ Os relatórios mostram matrículas, média, aprovação e progresso. Cada indica
 
 **Captura a produzir:** 13-gestor-conteudo.png e, se houver espaço, 14-relatorio.png.
 
-**Código para apontar:** [gestor.js: cursos](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Web/wwwroot/js/gestor.js:71); [gestor.js: módulos e materiais](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Web/wwwroot/js/gestor.js:142); [gestor.js: avaliações](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Web/wwwroot/js/gestor.js:289); [Preservação do histórico](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Api/Servicos/AvaliacoesServico.cs:88).
+**Código para apontar:** [gestor.js: cursos](../../TechLearnAcademy.Web/wwwroot/js/gestor.js); [gestor.js: módulos e materiais](../../TechLearnAcademy.Web/wwwroot/js/gestor.js); [gestor.js: avaliações](../../TechLearnAcademy.Web/wwwroot/js/gestor.js); [Preservação do histórico](../../TechLearnAcademy.Api/Servicos/AvaliacoesServico.cs).
 
 ## 11. Usuários e Administração — 09:20 a 10:10
 
@@ -213,7 +213,7 @@ A lista tem paginação. Mostramos somente os dados necessários para administra
 
 **Captura a produzir:** 15-administrador.png, sem dados pessoais de pessoas externas ao teste.
 
-**Código para apontar:** [administrador.js: usuários e paginação](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Web/wwwroot/js/administrador.js:15); [administrador.js: vínculos](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Web/wwwroot/js/administrador.js:57); [Trigger de auditoria](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/Banco/01-criar-banco.sql:289).
+**Código para apontar:** [administrador.js: usuários e paginação](../../TechLearnAcademy.Web/wwwroot/js/administrador.js); [administrador.js: vínculos](../../TechLearnAcademy.Web/wwwroot/js/administrador.js); [Trigger de auditoria](../../Banco/01-criar-banco.sql).
 
 ## 12. Banco, hash e integridade — 10:10 a 11:10
 
@@ -231,7 +231,7 @@ A senha não é guardada em texto puro. PBKDF2 usa repetições e um valor aleat
 
 **Captura a produzir:** 16-banco-codigo.png, mostrando o script e as restrições, sem exibir valores sensíveis.
 
-**Código para apontar:** [Tabela Usuarios](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/Banco/01-criar-banco.sql:30); [Procedure de matrícula](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/Banco/01-criar-banco.sql:225); [Procedure de relatório](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/Banco/01-criar-banco.sql:261); [Hash PBKDF2](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Api/Servicos/Regras.cs:50).
+**Código para apontar:** [Tabela Usuarios](../../Banco/01-criar-banco.sql); [Procedure de matrícula](../../Banco/01-criar-banco.sql); [Procedure de relatório](../../Banco/01-criar-banco.sql); [Hash PBKDF2](../../TechLearnAcademy.Api/Servicos/Regras.cs).
 
 ## 13. Recuperação, mobile e desktop — 11:10 a 11:55
 
@@ -247,7 +247,7 @@ O endereço do servidor pode ser informado. Em um celular, localhost aponta para
 
 **Capturas a produzir:** 17-mobile.png e 18-desktop.png somente depois de abrir os aplicativos reais. Uma tela do navegador redimensionada não comprova a execução de um aplicativo nativo.
 
-**Código para apontar:** [Recuperação por SMTP](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Api/Servicos/UsuariosServico.cs:87); [Código de uso único](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Api/Servicos/UsuariosServico.cs:115); [WebView MAUI](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Mobile/MainPage.xaml:18); [Endereço HTTPS](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Mobile/MainPage.xaml.cs:12); [WebView2 desktop](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/TechLearnAcademy.Desktop/TelaPrincipal.cs:46).
+**Código para apontar:** [Recuperação por SMTP](../../TechLearnAcademy.Api/Servicos/UsuariosServico.cs); [Código de uso único](../../TechLearnAcademy.Api/Servicos/UsuariosServico.cs); [WebView MAUI](../../TechLearnAcademy.Mobile/MainPage.xaml); [Endereço HTTPS](../../TechLearnAcademy.Mobile/MainPage.xaml.cs); [WebView2 desktop](../../TechLearnAcademy.Desktop/TelaPrincipal.cs).
 
 ## 14. Inclusão, privacidade e planejamento — 11:55 a 12:40
 
@@ -281,7 +281,7 @@ As evidências registram os testes efetivamente executados. O que ainda não foi
 
 **Captura a produzir:** 20-testes.png, somente com resultados reais. Não criar uma imagem de testes aprovados sem executá-los.
 
-**Código para apontar:** [Instância isolada de testes](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/Testes/testar-integracao.py:18); [Cliente HTTP com cookie](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/Testes/testar-integracao.py:38); [Cenários de integração](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/Testes/testar-integracao.py:103); [Execução explícita dos testes](C:/Users/rapha/.codex/visualizations/2026/10/04/01a108aa-ac8c-77e0-905a-645fbb3c6db6/TechLearnAcademy-PIMIV/Testes/testar-integracao.py:230).
+**Código para apontar:** [Instância isolada de testes](../../Testes/testar-integracao.py); [Cliente HTTP com cookie](../../Testes/testar-integracao.py); [Cenários de integração](../../Testes/testar-integracao.py); [Execução explícita dos testes](../../Testes/testar-integracao.py).
 
 ## Respostas literais para perguntas frequentes
 

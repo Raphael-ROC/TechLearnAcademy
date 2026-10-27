@@ -1,6 +1,6 @@
 # API da nova solução
 
-As regras de 06/10/2026 estão em [Documentacao/novas-funcoes.md](../Documentacao/novas-funcoes.md). O código e as rotas atuais incluem certificados, chamados, PDFs e perfis fixos. A referência anterior abaixo permanece como histórico.
+As regras de 06/10/2026 estão em [Documentacao/novas-funcoes.md](../Documentacao/historico/novas-funcoes.md). O código e as rotas atuais incluem certificados, chamados, PDFs e perfis fixos. A referência anterior abaixo permanece como histórico.
 
 Esta API acessa somente o SQL Server indicado pelo operador. Ela nunca executa scripts nem cria contas ao iniciar. O projeto antigo não participa desta solução.
 

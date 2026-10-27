@@ -1,6 +1,6 @@
 # Contrato da nova solução independente
 
-As regras de 06/10/2026 estão em [Documentacao/novas-funcoes.md](Documentacao/novas-funcoes.md). O código e as rotas atuais incluem certificados, chamados, PDFs e perfis fixos. A referência anterior abaixo permanece como histórico.
+As regras de 06/10/2026 estão em [Documentacao/novas-funcoes.md](Documentacao/historico/novas-funcoes.md). O código e as rotas atuais incluem certificados, chamados, PDFs e perfis fixos. A referência anterior abaixo permanece como histórico.
 
 Esta solução segue o TXT do PIM IV. O projeto antigo não será alterado.
 
