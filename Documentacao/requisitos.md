@@ -1,6 +1,6 @@
 # Requisitos e rastreabilidade — TechLearn Academy PIM IV
 
-Atualização de 06/10/2026: consulte [novas-funcoes.md](novas-funcoes.md) para as regras atuais de chamados, certificados, perfis fixos, senhas e materiais. As descrições e evidências abaixo registram a versão anterior.
+Atualização de 06/10/2026: consulte [novas-funcoes.md](historico/novas-funcoes.md) para as regras atuais de chamados, certificados, perfis fixos, senhas e materiais. As descrições e evidências abaixo registram a versão anterior.
 
 Fonte integral: TXT fornecido pelo grupo, “Resumo definitivo do PIM IV — TechLearn Academy”. A interpretação operacional está em `CONTRATO.md`. Esta matriz refere-se **somente à solução nova**, não modifica nem certifica o projeto antigo.
 

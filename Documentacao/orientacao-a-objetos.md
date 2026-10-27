@@ -114,4 +114,4 @@ Para conferir as regras sem acessar o banco, execute na pasta da solução:
 
 ## Novas funções
 
-Chamados, mensagens e certificados são coordenados pelo GestaoServico, usando tabelas de apoio. Mantivemos as nove classes principais do diagrama. Consulte [Guia das novas funções](novas-funcoes.md).
+Chamados, mensagens e certificados são coordenados pelo GestaoServico, usando tabelas de apoio. Mantivemos as nove classes principais do diagrama. Consulte [Guia das novas funções](historico/novas-funcoes.md).
