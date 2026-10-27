@@ -1,0 +1,70 @@
+name: Verificar projeto
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  api-e-site:
+    name: API e site
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: '10.0.x'
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - name: Compilar API
+        run: dotnet build TechLearnAcademy.Api/TechLearnAcademy.Api.csproj -c Release
+      - name: Compilar prévia do site
+        run: dotnet build TechLearnAcademy.Web/TechLearnAcademy.Web.csproj -c Release
+      - name: Verificar regras sem banco
+        run: dotnet run --project TechLearnAcademy.Tests -c Release
+      - name: Conferir JavaScript e links locais
+        run: node scripts/verificar-site.mjs
+      - name: Conferir pacote de publicação
+        run: dotnet publish TechLearnAcademy.Api/TechLearnAcademy.Api.csproj -c Release -o artifacts/api
+
+  desktop:
+    name: Desktop Windows
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: '10.0.x'
+      - name: Compilar aplicativo administrativo
+        run: dotnet build TechLearnAcademy.Desktop/TechLearnAcademy.Desktop.csproj -c Release
+      - name: Compilar verificações de interface
+        run: dotnet build Testes/Desktop/VerificarDesktop.csproj -c Release
+
+  android:
+    name: Android Java
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Compilar APK de desenvolvimento e executar Lint
+        working-directory: TechLearnAcademy.Android
+        run: bash gradlew --no-daemon assembleDebug lintDebug

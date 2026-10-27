@@ -1,0 +1,11 @@
+**/bin
+**/obj
+**/.vs
+**/*.user
+**/*.pfx
+**/*.mdf
+**/*.ldf
+**/*.bak
+Testes
+tmp
+

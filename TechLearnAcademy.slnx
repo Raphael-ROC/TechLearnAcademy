@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="TechLearnAcademy.Api/TechLearnAcademy.Api.csproj" />
+  <Project Path="TechLearnAcademy.Web/TechLearnAcademy.Web.csproj" />
+  <Project Path="TechLearnAcademy.Desktop/TechLearnAcademy.Desktop.csproj" />
+  <Project Path="TechLearnAcademy.Tests/TechLearnAcademy.Tests.csproj" />
+</Solution>
